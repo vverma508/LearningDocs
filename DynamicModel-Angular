@@ -1,0 +1,20 @@
+How to use dynamic models in anular?
+How to play around with dynamic models in UI side ?
+
+We can create dynamic variable as,
+
+    $scope["commonText" + $scope.YourDynamicModelValue]= {};
+    $scope["commonText" + $scope.YourDynamicModelValue].Text ="This is great".
+
+Now how can you use this variable in HTML ?
+
+It can be used with scope.
+We can find the model from scope in HTML and use the value.
+
+But, the problem is $scope isn't available in HTML.
+
+You can use as shown below ,
+
+  <input ng-model="this["commonText" +YourDynamicModelValue].Value"/>
+
+  {{this["commonText" +YourDynamicModelValue].Value}}
