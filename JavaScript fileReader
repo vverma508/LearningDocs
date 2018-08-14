@@ -1,0 +1,16 @@
+ function onFileSelect(input){
+                                if(input.files[0]){
+                                var reader = new FileReader();
+                                reader.readAsDataURL(input.files[0]);
+                                reader.onload= function(e){
+                                    $('#profilePic').attr('src',reader.result);
+                                };      
+                                }
+                        }
+                        
+                        
+  <img id="profilePic" style="height: 200px;" src="" />
+  <input type="file" onchange="onFileSelect(this)" placeholder="choose an image"/> 
+  
+  
+  To know fileReader in details, visit https://developer.mozilla.org/en-US/docs/Web/API/FileReader.
